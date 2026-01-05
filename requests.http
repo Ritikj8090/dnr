@@ -1,0 +1,403 @@
+### LOGIN with valid username/password
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "dorian@x.com",
+  "password": "tren"
+}
+
+### LOGIN with valid username/password
+POST http://13.203.205.54:8080/api/auth/logout
+Content-Type: application/json
+Cookie: token=eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJpYXQiOjE3NTE5MzYzMjMsImV4cCI6MTc1MTkzOTkyM30.2IkeQZ8dFEpdn3VuJIEGe6ytuPv2X-m2OLfSlI0oPdY
+
+{}
+
+###
+GET http://13.203.205.54:8080/api/auth/verify
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTIyODM5NzUsImV4cCI6MTc1MjI4NzU3NX0._oxiN6DnVIC5xa-_5A4gG5Atf1hjCmAPIjUANcWkTsw
+
+###
+POST http://localhost:8080/api/auth/all-users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTYwMzQxNDcsImV4cCI6MTc1NjAzNzc0N30.FODLeJekTYmf78ClE_giy91jNPvhERq5_DrVFdDZ44c
+
+###
+POST http://localhost:8080/api/auth/signup
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTY0NjY1MTYsImV4cCI6MTc1NjQ4NDUxNn0.sLe16zR6AzihuLFkspTtT5IZUmDJ-TlwihjP-DUzgGY
+
+{
+  "email": "BBtdweiserrr@x.com",
+  "password": "bud",
+  "fullName": "Bud Weiser",
+  "role": "USER"
+
+  
+}
+
+### Edit
+POST http://localhost:8080/api/auth/edit
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTYwMzQxNDcsImV4cCI6MTc1NjAzNzc0N30.FODLeJekTYmf78ClE_giy91jNPvhERq5_DrVFdDZ44c
+Content-Type: application/json
+
+{
+  "id": "92eb9e3b-d2f1-417f-8480-6a0fa1d69f45",
+  "newPassword": "NewPass@123"
+}
+
+
+### 1. Create Quotation
+POST http://localhost:8080/api/quotations/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTY0NjM4NTYsImV4cCI6MTc1NjQ2NzQ1Nn0.1Vbs_qR4uQxhdT9Y2PjzYVdz1eT7b710SSdMDbYCXy0
+
+{
+  "flag": "E",
+  "referenceNo": "QTN-2025-002",
+  "date": "2025-08-29",
+  "expirationAt": "2025-09-15",
+  "companyName": "Stibium Tech Pvt Ltd",
+  "attention": "John Doe",
+  "designation": "Manager",
+  "email": "john.doe@example.com",
+  "phone": "+91-9876543210",
+  "address": "Pune, Maharashtra",
+  "website": "https://stibiumtech.com",
+  "subject": "Quotation for ERP Suite",
+  "project": "ERP Imn",
+  "title": "ERP Suite - Phase 1 Quotation",    
+  "authorName": "Aditya",
+  "vat": 18.00,
+  "columns": [
+    {
+      "id": "col-1",
+      "columnId": "description",
+      "columnName": "Description",
+      "required": true,
+      "inputType": "text",
+      "width": "200px",
+      "formula": null
+    },
+    {
+      "id": "col-2",
+      "columnId": "quantity",
+      "columnName": "Quantity",
+      "required": true,
+      "inputType": "number",
+      "width": "100px",
+      "formula": null
+    },
+    {
+      "id": "col-3",
+      "columnId": "unit_price",
+      "columnName": "Unit Price",
+      "required": true,
+      "inputType": "number",
+      "width": "120px",
+      "formula": null
+    },
+    {
+      "id": "col-4",
+      "columnId": "total",
+      "columnName": "Total",
+      "required": true,
+      "inputType": "calculated",
+      "width": "120px",
+      "formula": "quantity * unit_price"
+    }
+  ],
+  "rows": [
+    {
+      "id": "row-1",
+      "quotation_id": null,
+      "rowIndex": 1,
+      "cells": {
+        "description": "ERP License Fee",
+        "quantity": "10",
+        "unit_price": "5000",
+        "total": "50000"
+      }
+    },
+    {
+      "id": "row-2",
+      "quotation_id": null,
+      "rowIndex": 2,
+      "cells": {
+        "description": "Implementation Services",
+        "quantity": "1",
+        "unit_price": "25000",
+        "total": "25000"
+      }
+    }
+  ]
+}
+
+
+### 2. Edit Quotation (Creates New Version)
+POST http://localhost:8080/api/quotations/edit
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTU3OTgzNTQsImV4cCI6MTc1NTgwMTk1NH0.sSgwK5FJ7WT5caJSD9VanII4RKY-neNSJvUFpWCTRzQ
+
+{
+  "flag": "E",
+  "referenceNo": "QTN-20250821-2efa10",   
+  "date": "2025-08-21",
+  "expirationAt": "2025-09-20",
+  "companyName": "Acme Corp (Updated)",
+  "attention": "John Doe",
+  "designation": "CTO",
+  "email": "john.doe@acme.com",
+  "phone": "+91-9876543210",
+  "address": "456 Residency Road, Bangalore",
+  "website": "https://acme.com",
+  "subject": "Quotation for ERP Software - Revised",
+  "project": "ERP Implementation",
+  "authorName": "Aditya Sharma",
+  "vat": 20.000,
+  "columns": [
+    {
+      "columnId": "item",
+      "columnName": "Item",
+      "required": true,
+      "inputType": "text",
+      "width": "200px"
+    },
+    {
+      "columnId": "qty",
+      "columnName": "Quantity",
+      "inputType": "number",
+      "width": "100px"
+    },
+    {
+      "columnId": "price",
+      "columnName": "Price",
+      "inputType": "number",
+      "width": "120px"
+    }
+  ],
+  "rows": [
+    {
+      "rowIndex": 1,
+      "cells": {
+        "item": "ERP Cloud Subscription",
+        "qty": "12",
+        "price": "4500"
+      }
+    }
+  ]
+}
+
+
+
+### 2. Get All Quotations (if implemented)
+POST http://localhost:8080/api/quotations/by-id
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTI1MDM2NjgsImV4cCI6MTc1MjUwNzI2OH0.kctIlEuuKxfZGXTTOUc4wNTt0c5a0FpGeCAHBo3yKac
+
+{
+  
+  "quotationId": "644dafc9-c3b7-4b24-8f6c-5fb1ca24043b"
+}
+
+### 2. Get All Quotations (if implemented)
+POST http://13.203.205.54:8080/api/quotations/paginated
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTI1MDM2NjgsImV4cCI6MTc1MjUwNzI2OH0.kctIlEuuKxfZGXTTOUc4wNTt0c5a0FpGeCAHBo3yKac
+
+{
+  "page": 0,
+  "size": 10
+}
+
+
+
+
+### 2. Get All Quotations (if implemented)
+POST http://13.203.205.54:8080/api/quotations/by-user
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTIwMzQxODQsImV4cCI6MTc1MjAzNzc4NH0.qsa9MuR3EDiMal72TuAN2mx67u2S17trZJWxuDxGVU8
+
+{
+  "page": 0,
+  "size": 5,
+  "createdBy": "88ed171d-aaaf-4b39-adf1-794c2cfadab6"
+}
+
+
+
+
+### 2. Get All Quotations (if implemented)
+GET http://localhost:8080/api/quotations/download/546cb5fa-4b81-498b-bc4a-4671d2c58ae7
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTMyNTA3ODgsImV4cCI6MTc1MzI1NDM4OH0.aEZ73bxeWnuL3BHqTJobUU60CpUb48tieUeyUKIZFtM
+
+
+###
+POST http://localhost:8080/api/auth/all-users
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTMyNzIyMzgsImV4cCI6MTc1MzI3NTgzOH0.EmdwFVe3jSt3H4NKfWh3S_jHgMO9RhAuuvCoT51Yhlo
+Content-Type: application/json
+
+{
+
+}
+
+###
+POST http://localhost:8080/api/auth/delete-user
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTMyNzIyMzgsImV4cCI6MTc1MzI3NTgzOH0.EmdwFVe3jSt3H4NKfWh3S_jHgMO9RhAuuvCoT51Yhlo
+Content-Type: application/json
+
+{
+  "id": "63ba2af9-2a53-4188-9780-7e29a52e0e24"
+}
+
+### Test Offer Letter PDF generation
+POST http://localhost:8080/api/offer-letters/generate
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTMyOTg4NjIsImV4cCI6MTc1MzMwMjQ2Mn0.b3jZJKJ5ugwMJdJHesZBOdS228sCrkwyozzWSoBOSP0
+
+{
+  "html": "<html><body><h1>Offer Letter</h1><p>Welcome to the team!</p></body></html>"
+}
+
+### Create Offer Letter
+POST http://localhost:8080/api/offer-letters/save
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTU2MDAyMTIsImV4cCI6MTc1NTYwMzgxMn0.F7zOiGAPrY8PCbyzDQoT_w-f-RaZfP4MrknrCtDFoa0
+
+{
+  "employeeName": "John Doe",
+  "position": "Software Engineer",
+  "salary": "1200000",
+  "joiningDate": "2025-09-01",
+  "salaryBreakdown": [
+    { "label": "Basic Salary", "amount": 600000 },
+    { "label": "Functional Allowance", "amount": 300000 },
+    { "label": "Operational Allowance", "amount": 300000 }
+  ]
+}
+
+###
+
+### Update Offer Letter
+POST http://localhost:8080/api/offer-letters/save
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTU2MDAyMTIsImV4cCI6MTc1NTYwMzgxMn0.F7zOiGAPrY8PCbyzDQoT_w-f-RaZfP4MrknrCtDFoa0
+
+{
+  "offerLetterId": "fef49ff0-4599-4c5e-bddd-9cfaf4651066",
+  "employeeName": "John Doe",
+  "position": "Senior Software Engineer",
+  "salary": "1500000",
+  "joiningDate": "2025-09-15",
+  "salaryBreakdown": [
+    { "label": "Basic Salary", "amount": 700000 },
+    { "label": "Functional Allowance", "amount": 400000 },
+    { "label": "Operational Allowance", "amount": 400000 }
+  ]
+}
+
+
+### Create a Bill
+POST http://localhost:8080/api/bills/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTYxMDkwNzgsImV4cCI6MTc1NjExMjY3OH0.vLqi30gRriMt1ix8Gn7WZJvZzSrArZhWHiyl2qtbcXk
+
+{
+  
+  "invoiceDate": "2025-07-25",
+  "customerName": "John Doe",
+  "customerCompany": "facebook",
+  "customerAddress": "123, Main Street, NY",
+  "contactNumber": "9999999999",
+  "subtotal": 10000.00,
+  "gstPercent": 18.0,
+  "gstAmount": 1800.00,
+  "totalAmount": 11800.00,
+  "amountReceived": 10000.00,
+  "balanceDue": 1800.00,
+  "paymentMode": "Cash",
+  "createdBy": "88ed171d-aaaf-4b39-adf1-794c2cfadab6",
+  "items": [
+    {
+      "description": "Service A",
+      "qty": 2,
+      "unitPrice": 5000.00,
+      "amount": 10000.00
+    }
+  ]
+}
+
+### Create bill
+POST http://localhost:8080/api/bills/create
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTU4NDIyNDEsImV4cCI6MTc1NTg0NTg0MX0.TRrdP2MuOVMJ0FqglYoW1vGB06ADcRDBuVhmouABF1M
+
+{
+  "invoiceDate": "2025-08-17",
+  "customerName": "TRIDENT",
+  "customerAddress": "Model Town",
+  "contactNumber": "+911212121212",
+  "customerEmail": "accounts@trident.example",   
+  "subtotal": 11000,
+  "gstPercent": 5,
+  "gstAmount": 550,
+  "totalAmount": 11550,
+  "amountReceived": 0,
+  "balanceDue": 0,
+  "paymentMode": "Cash",
+  "items": [
+    { "description": "Wires", "qty": 10, "unitPrice": 100, "amount": 1000 },
+    { "description": "Camera", "qty": 2, "unitPrice": 5000, "amount": 10000 }
+  ]
+}
+
+
+### Update the same Bill
+POST http://localhost:8080/api/bills/update
+Content-Type: application/json
+
+{
+  "id": "5bb4a8a5-9c63-4b67-9f5b-2d823c6601aa",
+  "invoiceNo": "INV-001-UPDATED",
+  "invoiceDate": "2025-07-25",
+  "customerName": "John Updated",
+  "customerAddress": "456, Market Street",
+  "contactNumber": "8888888888",
+  "subtotal": 12000.00,
+  "gstPercent": 18.0,
+  "gstAmount": 2160.00,
+  "totalAmount": 14160.00,
+  "amountReceived": 12000.00,
+  "balanceDue": 2160.00,
+  "paymentMode": "UPI",
+  "createdBy": "88ed171d-aaaf-4b39-adf1-794c2cfadab6",
+  "items": [
+    {
+      "description": "Service A Updated",
+      "qty": 2,
+      "unitPrice": 6000.00,
+      "amount": 12000.00
+    }
+  ]
+}
+
+### Get Bill By ID (Admin: pass null for createdBy)
+POST http://localhost:8080/api/bills/get
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI4OGVkMTcxZC1hYWFmLTRiMzktYWRmMS03OTRjMmNmYWRhYjYiLCJyb2xlIjoiQURNSU4iLCJlbWFpbCI6ImRvcmlhbkB4LmNvbSIsIm5hbWUiOiJEb3JpYW4gWWF0ZXMiLCJpYXQiOjE3NTU4Mzg1MDcsImV4cCI6MTc1NTg0MjEwN30.CRhkHViVzK_iIKGZThSGgZyjJNmFvOWcz4_hsBGouXs
+
+{
+  "id": "2071555f-98cd-402e-a24e-6de8249a59cd",
+  "createdBy": null
+}
+
+### Get Bill By ID (Normal User)
+POST http://localhost:8080/api/bills/get
+Content-Type: application/json
+
+{
+  "id": "2071555f-98cd-402e-a24e-6de8249a59cd",
+  "createdBy": "c5f1e6cb-c86a-4a52-9237-fb0997c6f1a5"
+}

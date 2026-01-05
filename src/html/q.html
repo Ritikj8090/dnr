@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: monospace;
+        position: relative;
+        line-height: 20px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-right {
+        text-align: right;
+      }
+      .font-bold {
+        font-weight: bold;
+      }
+      .capitalize {
+        text-transform: uppercase;
+      }
+      .space-y-2 > :not(:last-child) {
+        margin-top: 20px; /* space above */
+        margin-bottom: 20px; /* space below */
+      }
+      p {
+        margin: 0%;
+      }
+      .table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+      .table th,
+      .table td {
+        border: 1px solid #ccc;
+        padding: 8px;
+      }
+      .table th {
+        background-color: #d4d4d4;
+      }
+      .table tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .flex p {
+        width: 100%;
+        display: table;
+      }
+      .left,
+      .right {
+        display: table-cell;
+        vertical-align: top;
+        width: 50%;
+      }
+      hr {
+        border: none;
+        border-top: 1px solid #cdced1; /* line color */
+      }
+      .text-xl{
+        font-size: 20px;
+      }
+      .p-x{
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .img1 {
+        width: 190px;
+      }
+      .img2 {
+        width: 100px;
+      }
+      .flex {
+        width: 100%;
+        display: table;
+      }
+      .header-left {
+        display: table-cell;
+        vertical-align: top;
+        width: 70%;
+      }
+      .header-right {
+        display: table-cell;
+        vertical-align: top;
+        width: 30%;
+      }
+    </style>
+  </head>
+  <body class="space-y-2">
+    <div class="flex">
+      <div class="header-left">
+        <h1>DNR TECHNICAL SERVICES</h1>
+        <p>CBD Building, Office No. 226</p>
+        <p>Saraf DG Metro Station Dubai, UAE</p>
+        <p>Phone: +971-56 5025206</p>
+        <p>Email: info@dnrtechnicalsservices.com</p>
+      </div>
+      <div class="header-right text-right" style="padding-top: 25px">
+        <img
+          src="https://dnrtechnicalsservices.com/logo3.png"
+          alt=""
+          style="width: 200px; height: 80px"
+        />
+      </div>
+    </div>
+    <header>
+      <hr></hr>
+      <h1 class="text-center capitalize">Quotation</h1>
+      <hr></hr>
+      <div class=" flex">
+        <div class="left">
+          <span class="font-bold">Reference No:</span>
+          <span>{{referenceNo}}</span>
+        </div>
+        <div class=" right text-right">
+          <span class="font-bold">Date:</span>
+          <span>{{date}}</span>
+        </div>
+      </div>
+    </header>
+    <div>
+      <p class="font-bold">To</p>
+      <p>{{companyName}}</p>
+      <p><span class="font-bold">Beneficiary:</span> <span>{{attention}}</span></p>
+      <p>{{address}}</p>
+      <p>{{email}}</p>
+      <p>{{phone}}</p>
+      <p>{{designation}}</p>
+      <p><a href="{{website}}">{{website}}</a></p>
+    </div>
+    <div>
+      <p>
+        <span class="font-bold">Subject:</span>
+        <span>{{subject}}</span>
+      </p>
+      <p>
+        <span class="font-bold">Project:</span>
+        <span>{{project}}</span>
+      </p>
+    </div>
+    <div>
+      <p class="font-bold">Dear Sir/Madam,</p>
+      <p>
+        We are pleased to submit our commercial offer for the {{title}} for the above-referenced project. The scope
+        includes complete installation, termination, testing, and commissioning
+        activities as per project specifications.
+      </p>
+    </div>
+    <table class="table">
+      {{thead}}
+      {{tableRows}}
+    </table>
+    <div class="flex" style="margin-top: 20px;">
+      <p>
+        <span class="left font-bold">Subtotal:</span
+        ><span class="right text-right">{{subtotal}}</span>
+      </p>
+      <hr></hr>
+      <p>
+        <span class="left font-bold">{{vatPercentage}}% VAT:</span
+        ><span class="right text-right">{{vat}}</span>
+      </p>
+      <hr></hr>
+      <p class=" font-bold">
+        <span class="left">Total Contract Value:</span
+        ><span class="right text-right">{{total}}</span>
+      </p>
+      
+    </div>
+    <div>
+      <h4>Scope of Work</h4>
+      <ul>
+        {{scope}}
+      </ul>
+    </div>
+    <div>
+      <h4>Commercial Terms</h4>
+      <ul>
+        <li><strong>Validity:</strong> 30 days from the date of quotation</li>
+        <li>
+          <strong>Payment Terms:</strong> Within 2 weeks from invoice date
+        </li>
+        <li>
+          <strong>Exclusions:</strong> Civil works, access provisions,
+          additional scope not mentioned
+        </li>
+      </ul>
+    </div>
+    <div class="footer section">
+      <p style="padding-bottom: 50px;">
+        For any further clarification or technical discussion, please feel free
+        to contact us.
+      </p>
+      <div class=" flex">
+        <div class=" left">
+           <div>
+        <img class="img1" src="signature.png" alt="signature" />
+        <img class="img2" src="stamp.png" alt="stamp" />
+      </div>
+      <p>
+        <strong>Kiran Rai</strong><br />
+        Director, DNR Technicals Services<br />
+        CBD Building, Office No. 226, Near Saraf DG Metro Station, Dubai<br />
+        +971 56 5025206<br />
+        <a href="mailto:info@dnrtechnicalsservices.com"
+          >info@dnrtechnicalsservices.com</a
+        ><br />
+        <a href="https://www.dnrtechnicalsservices.com"
+          >www.dnrtechnicalsservices.com</a
+        >
+      </p>
+        </div>
+        <div class=" right" style=" padding-left: 200px; padding-top: 30px;">
+          <div>
+            <p class=" font-bold">Approved by:</p>
+            <p style="padding-top: 5px; padding-bottom: 5px;">{{companyName}}</p>
+          </div>
+          <div>
+            <p class=" font-bold">Authorised Signature:</p>
+            <p style="padding-top: 10px; padding-bottom: 5px;">______________________</p>
+          </div>
+          <div>
+            <p class=" font-bold">Stamp:</p>
+            <p style="padding-top: 20px;">______________________</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
